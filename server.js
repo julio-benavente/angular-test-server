@@ -12,11 +12,11 @@ app.use(express.urlencoded({ limit: "20mb", extended: true }));
 app.use(cors());
 
 // Routes
-const auth = require("./routes/auth/auth");
-const products = require("./routes/api/products");
+// const auth = require("./routes/auth/auth");
+// const products = require("./routes/api/products");
 
-app.use("/api/products", products);
-app.use("/auth", auth);
+// app.use("/api/products", products);
+// app.use("/auth", auth);
 
 // Serve static assets if in production
 if (process.env.NODE_ENV === "production") {
@@ -35,13 +35,11 @@ mongoose
   .connect(db, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    useCreateIndex: true,
-    useFindAndModify: false,
   })
   .then((e) => console.log("MongoDB connected"))
   .catch((err) => console.log(err));
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 4423;
 
 // App connection
 app.listen(port, () => {
