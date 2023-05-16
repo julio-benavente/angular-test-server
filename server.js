@@ -13,10 +13,13 @@ app.use(cors());
 
 // Routes
 // const auth = require("./routes/auth/auth");
-// const products = require("./routes/api/products");
+const products = require("./routes/api/products");
+const users = require("./routes/api/users");
+const auth = require("./routes/auth/auth");
 
-// app.use("/api/products", products);
-// app.use("/auth", auth);
+app.use("/api/products", products);
+app.use("/api/users", users);
+app.use("/auth", auth);
 
 // Serve static assets if in production
 if (process.env.NODE_ENV === "production") {
