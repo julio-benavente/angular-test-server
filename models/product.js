@@ -23,7 +23,6 @@ const ProductSchema = new mongoose.Schema(
     imageLink: {
       type: String,
       requried: false,
-      minLength: 5,
       maxLength: 4000,
     },
     inStock: {

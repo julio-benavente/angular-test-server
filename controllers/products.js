@@ -44,10 +44,7 @@ module.exports.deleteProduct = async (req, res) => {
 };
 
 module.exports.createProduct = async (req, res) => {
-  const { name, prices } = req.body;
   try {
-    console.log(req.user);
-
     const { name, description, price, imageLink, categories, inStock } =
       req.body;
     const dataToCreateProduct = {
